@@ -10,15 +10,14 @@ public class Bill {
 		int units = s.nextInt();
 		
 		int op = 0;
-		float price = 0;
+		double price = 0;
 		
-		if (units <= 100) {
+		if (units <= 100) 
 			op = 1;
-		} else if (units >= 101 && units <= 200) {
+		else if (units >= 101 && units <= 200) 
 			op = 2;
-		} else if (units >= 201) {
+		else if (units >= 201) 
 			op = 3;
-		}
 		
 		switch (op) {
 		case 1:

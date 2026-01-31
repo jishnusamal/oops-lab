@@ -6,3 +6,4 @@ bin/
 .metadata/
 module-info.java
 .DS_Store
+.vscode/

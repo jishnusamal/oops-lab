@@ -45,7 +45,7 @@ public class Products {
 		double[] selectedPrices = new double[nBuy];
 		
 		for (int i = 0; i<nBuy; i++) {
-			System.out.print("Enter Product ID to buy " + ": ");
+			System.out.print("Enter Product ID to buy: ");
 			int productID = s.nextInt();
 			selectedProducts[i] = productName[productID - 1];
 
