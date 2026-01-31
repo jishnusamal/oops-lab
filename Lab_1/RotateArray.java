@@ -13,15 +13,15 @@ public class RotateArray {
 		System.out.print("Number of Elements: ");
 		int n = s.nextInt();
 		
-		int[] a = new int[n];
-		int[] newA = new int[n];
+		int[] a = new int[n], newA = new int[n];
 		
 		for (int i = 0; i<n; i++) {
 			System.out.print("Number "+(i+1)+": ");
 			a[i] = s.nextInt();
 		}
 		
-		System.out.print("1. Forward\n2. Backward: ");
+		System.out.println("1. Forward\n2. Backward");
+		System.out.print("Option: ");
 		int op = s.nextInt();
 		System.out.print("Step: ");
 		int step = s.nextInt();
@@ -30,14 +30,12 @@ public class RotateArray {
 		case 1:
 			for (int j = 0; j<a.length; j++) {
 				int newIndex = (int) (j+step)%a.length;
-				System.out.print(j + " "+newIndex + "\n");
 				newA[newIndex] = a[j];
 			}
 			break;
 		case 2:
 			for (int j = 0; j<a.length; j++) {
 				int newIndex = (int) (j-step+a.length)%a.length;
-				System.out.print(j + " "+newIndex + "\n");
 				newA[newIndex] = a[j];
 			}
 			break;

@@ -19,9 +19,7 @@ public class Products {
 		String[] productName= new String[n];
 		double[] productPrice = new double[n];
 		int[] productQuantity = new int[n];
-		
-		int[] selectedProducts = new int[100];
-		
+				
 		for (int i = 0; i<n; i++) {
 			System.out.println("Product "+(i+1));
 			s.nextLine();     
@@ -38,6 +36,34 @@ public class Products {
 		for (int i = 0; i<n; i++) {
 			System.out.print("Product "+(i+1) + ": " + productName[i] + " ₹" + productPrice[i] + " " + productQuantity[i] + "\n");
 		}
+
+		System.out.print("Number of Products to Buy: ");
+		int nBuy = s.nextInt();
+		
+		String[] selectedProducts = new String[nBuy];
+		int[] selectedQuantities = new int[nBuy];
+		double[] selectedPrices = new double[nBuy];
+		
+		for (int i = 0; i<nBuy; i++) {
+			System.out.print("Enter Product ID to buy " + ": ");
+			int productID = s.nextInt();
+			selectedProducts[i] = productName[productID - 1];
+
+			System.out.print("Enter Quantity: ");
+			int quantity = s.nextInt();
+			selectedQuantities[i] = quantity;
+
+			selectedPrices[i] = productPrice[productID - 1] * quantity;
+		}
+
+		double totalBill = 0;
+
+		System.out.println("----- BILL -----");
+		for (double e: selectedPrices) {
+			totalBill += e;
+		}
+
+		System.out.println("Total Bill: " + totalBill);
 		
 		s.close();
 	}
