@@ -33,6 +33,7 @@ public class Bill {
 		}
 		
 		System.out.println("Electricity Charge: " + price);
+		s.close();
 
 	}
 

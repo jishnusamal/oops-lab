@@ -46,6 +46,8 @@ public class RotateArray {
 		for (int e: newA) {
 			System.out.println(e);
 		}
+
+		s.close();
 	}
 
 }

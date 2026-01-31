@@ -14,6 +14,7 @@ public class YearJoined {
 		}
 		
 		System.out.println("Year of Joining: " + (int) yoj);
+		s.close();
 	}
 
 }

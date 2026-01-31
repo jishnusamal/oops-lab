@@ -19,6 +19,8 @@ public class DateOfRetirement {
 		
 		System.out.println("Age: " + (2026-year));
 		System.out.println("Date of Retirement: " + day + "/" + month + "/" + yearOfRetirement);
+
+		s.close();
 	}
 
 }

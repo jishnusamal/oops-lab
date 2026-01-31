@@ -20,6 +20,7 @@ public class TaxiService {
 		
 		System.out.println("Price = "+ price);
 
+		s.close();
 	}
 
 }

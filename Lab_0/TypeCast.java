@@ -27,5 +27,6 @@ public class TypeCast {
 		System.out.println("double to byte: " + doubleByte);
 		System.out.println("double to int: " + doubleInt);
 		
+		s.close();
 	}
 }

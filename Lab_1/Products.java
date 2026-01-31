@@ -38,6 +38,7 @@ public class Products {
 		for (int i = 0; i<n; i++) {
 			System.out.print("Product "+(i+1) + ": " + productName[i] + " ₹" + productPrice[i] + " " + productQuantity[i] + "\n");
 		}
+		
+		s.close();
 	}
-
 }
