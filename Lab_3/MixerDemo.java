@@ -44,33 +44,16 @@ class Mixer {
     Mixer mix(Mixer A) {
 
         int i = 0, j = 0, k = 0;
-        int temp[] = new int[this.arr.length + A.arr.length];
+        int res[] = new int[this.arr.length + A.arr.length];
 
-        while (i < this.arr.length && j < A.arr.length) {
-            if (this.arr[i] < A.arr[j]) {
-                temp[k++] = this.arr[i++];
-            } else if (this.arr[i] > A.arr[j]) {
-                temp[k++] = A.arr[j++];
-            } else {
-                temp[k++] = this.arr[i++];
-                j++;
-            }
+        for (; i < this.arr.length; i++) {
+            res[k++] = this.arr[i];
+        }
+        for (; j < A.arr.length; j++) {
+            res[k++] = A.arr[j];
         }
 
-        while (i < this.arr.length) {
-            temp[k++] = this.arr[i++];
-        }
-
-        while (j < A.arr.length) {
-            temp[k++] = A.arr[j++];
-        }
-
-        int result[] = new int[k];
-        for (int x = 0; x < k; x++) {
-            result[x] = temp[x];
-        }
-
-        return new Mixer(result);
+        return new Mixer(res);
     }
 
     void display() {

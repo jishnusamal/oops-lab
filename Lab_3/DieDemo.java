@@ -11,9 +11,7 @@ class Die {
         this.sideUp = 1;
     }
 
-    public int getSideUp() {
-        return sideUp;
-    }
+    public int getSideUp() { return sideUp; }
 
     void roll() {
         this.sideUp = (int)(Math.random() * 6) + 1;
