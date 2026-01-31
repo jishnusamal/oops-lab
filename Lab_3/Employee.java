@@ -1,4 +1,4 @@
-package lab3;
+package Lab_3;
 
 class employeeData {
 	String ename;

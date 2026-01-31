@@ -1,4 +1,4 @@
-package lab1;
+package Lab_1;
 
 public class Analyze {
 

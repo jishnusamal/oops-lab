@@ -1,4 +1,4 @@
-package sum_of_two_numbers;
+package Lab_0;
 
 public class Sum {
 

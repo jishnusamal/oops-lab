@@ -1,4 +1,4 @@
-package retirement;
+package Lab_2;
 import java.util.Scanner;
 
 public class DateOfRetirement {
@@ -16,8 +16,6 @@ public class DateOfRetirement {
 		int day = s.nextInt();
 		
 		int yearOfRetirement = year + 60;
-		
-		int[] todayDate = {13, 01, 2026};
 		
 		System.out.println("Age: " + (2026-year));
 		System.out.println("Date of Retirement: " + day + "/" + month + "/" + yearOfRetirement);

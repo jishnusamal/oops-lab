@@ -1,3 +1,5 @@
+package Lab_0;
+
 public class First {
 
 	public static void main(String[] args) {
