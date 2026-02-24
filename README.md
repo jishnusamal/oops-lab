@@ -59,3 +59,7 @@ Future labs will continue increasing in conceptual depth and implementation rigo
 Jishnu P Samal
 
 ---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
