@@ -2,9 +2,9 @@ package Lab_6;
 import java.util.Scanner;
 
 class Employee {
-	String ename, email;
-	int eid;
-	double basic, da, gross, net;
+	String ename = "", email = "";
+	int eid = 0;
+	double basic = 0, da = 0, gross = 0, net = 0;
 	Department[] departments = { 
 		new Department("Engineering", "BLR"), 
 		new Department("Sales", "BLR"), 
@@ -13,20 +13,13 @@ class Employee {
 	};
 	Department dept = departments[0];
 	
-	Employee() {
-		this.ename = "";
-		this.eid = 0;
-		this.basic = 0;
-		this.da = 0.52 * basic;
-		this.gross = this.basic + this.da;
-	}
-	
 	Employee(int eid, String ename, double basic) {
 		this.ename = this.formatEmployeeName(ename);
 		this.eid = eid;
 		this.basic = basic;
 		this.da = 0.52 * basic;
 		this.gross = this.basic + this.da;
+		this.generateEmail();
 	}
 	
 	class Department {
@@ -55,13 +48,15 @@ class Employee {
 		return formattedName;
 	}
 	
-	String generateEmail() {
-		return " ";
+	void generateEmail() {
+		String email = this.ename.toLowerCase().trim().replace(" ", ".") + "@example.com";
+		this.email = email;
 	}
 	
 	void display() {
 		System.out.println("Employee ID: "+this.eid);
 		System.out.println("Name: "+this.ename);
+		System.out.println("Email: "+this.email);
 		System.out.println("Net Salary: "+this.net);
 		System.out.println("Department: " + this.dept.departmentName + ", "+ this.dept.location);
 	}
