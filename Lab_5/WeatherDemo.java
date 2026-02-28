@@ -11,33 +11,32 @@ class Weather {
                 return "Cloudy";
             }
         }
-
-        static class City {
+    }
+    static class City {
             String cityName;
             double temp;
             double humidity;
 
-            City(String cityName, double temp, double humidity) {
-                this.cityName = cityName;
-                this.temp = temp;
-                this.humidity = humidity;
-            }
+        City(String cityName, double temp, double humidity) {
+            this.cityName = cityName;
+            this.temp = temp;
+            this.humidity = humidity;
+        }
 
-            void displayForecast() {
-                System.out.println("City: " + this.cityName);
-                System.out.println("Temperature: " + this.temp);
-                System.out.println("Humidity: " + this.humidity);
-                System.out.println("Forecast: " + Weather.Forecast.predictWeather(this.temp, this.humidity));
-            }
+        void displayForecast() {
+            System.out.println("City: " + this.cityName);
+            System.out.println("Temperature: " + this.temp);
+            System.out.println("Humidity: " + this.humidity);
+            System.out.println("Forecast: " + Weather.Forecast.predictWeather(this.temp, this.humidity)+"\n");
         }
     }
 }
 
 class WeatherDemo {
     public static void main(String[] args) {
-        Weather.Forecast.City delhi = new Weather.Forecast.City("Delhi", 35.0, 80.0);
+        Weather.City delhi = new Weather.City("Delhi", 35.0, 80.0);
         delhi.displayForecast();
-        Weather.Forecast.City Bengaluru = new Weather.Forecast.City("Bengaluru", 30.0, 50.0);
+        Weather.City Bengaluru = new Weather.City("Bengaluru", 30.0, 50.0);
         Bengaluru.displayForecast();
     }
 }
