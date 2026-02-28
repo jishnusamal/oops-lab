@@ -2,40 +2,40 @@ package Lab_4;
 
 class BankAccount {
 	static enum type {
-		SB, ACC
+		Savings, Checking, Current
 	};
 	
 	String name;
 	long accNumber;
 	type accType;
-	double balance;
-	double minBalance = 10000;
+	double bal;
+	double minBal = 10000;
 	static double rate = 0.3;
 	
 	BankAccount() {
 		this.name = "";
 		this.accNumber = 0;
-		this.accType = type.SB;
-		this.balance = 0;
+		this.accType = type.Savings;
+		this.bal = 0;
 	}
 	
-	BankAccount(String name, long accNumber, type accType, double balance) {
+	BankAccount(String name, long accNumber, type accType, double bal) {
 		this.name = name;
 		this.accNumber = accNumber;
 		this.accType = accType;
-		this.balance = balance;
+		this.bal = bal;
 	}
 	
 	void deposit(double deposit) {
-		this.balance += deposit;
-		System.out.println("You've deposited "+ deposit + ". Your total balance is "+ this.balance);
+		this.bal += deposit;
+		System.out.println("You've deposited "+ deposit + ". Your total balance is "+ this.bal);
 		
 	}
 	
 	void withdraw(double amount) {
-		if ((this.balance - amount) > this.minBalance) {
-			this.balance -= amount;
-			System.out.println("You've withdrawn "+ amount + ". Your remaining balance is "+ this.balance);
+		if ((this.bal - amount) > this.minBal) {
+			this.bal -= amount;
+			System.out.println("You've withdrawn "+ amount + ". Your remaining balance is "+ this.bal);
 		} else {
 			System.out.println("Insufficient Balance");
 		}
@@ -46,7 +46,7 @@ class BankAccount {
 		System.out.println("Name: "+ this.name);
 		System.out.println("Account Number: "+ this.accNumber);
 		System.out.println("Account Type: "+ this.accType);
-		System.out.println("Balance: "+ this.balance);
+		System.out.println("Balance: "+ this.bal);
 		System.out.println("Rate of Interest: "+ BankAccount.rate);
 		System.out.println();
 	}
@@ -55,7 +55,7 @@ class BankAccount {
 public class BankAccountDemo {
 
 	public static void main(String[] args) {
-		BankAccount Piyush = new BankAccount("Piyush Sahoo", 400147707, BankAccount.type.SB, 20000);
+		BankAccount Piyush = new BankAccount("Piyush Sahoo", 400147707, BankAccount.type.Savings, 20000);
 		Piyush.deposit(10000);
 		Piyush.displayAccountDetails();
 		Piyush.withdraw(1234.6);

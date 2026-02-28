@@ -8,7 +8,7 @@ class Counter {
 	}
 	
 	void showCount() {
-		System.out.println(counter + " objects of class Counter have been created.");
+		System.out.println(counter + " counter instances have been created.");
 	}
 }
 

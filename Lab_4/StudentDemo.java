@@ -22,11 +22,11 @@ class Student {
 	}
 	
 	void compute() {
-		float sum = 0;
+		double sum = 0;
 		for (double m: this.marksArray) {
 			sum += m;
 		}
-		float average = sum/this.marksArray.length;
+		double average = sum/this.marksArray.length;
 
 		this.total = sum;
 		this.avg = average;
@@ -36,7 +36,6 @@ class Student {
 public class StudentDemo {
 
 	public static void main(String[] args) {
-		System.out.println("Hello");
 		String sname = "GK";
 		double[] marksArray = {93, 94, 92, 97, 94};
 		Student Gyanu = new Student(sname, marksArray);
