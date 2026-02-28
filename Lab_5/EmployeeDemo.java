@@ -1,25 +1,14 @@
 package Lab_5;
-import java.util.Scanner;
 
 class Employee {
 	String ename;
 	int eid;
 	double basic, da, gross, net;
+	Department dept;
 	Department[] departments = { 
 		new Department("Engineering", "BLR"), 
-		new Department("Sales", "BLR"), 
-		new Department("Marketing", "BLR"), 
-		new Department("HR", "BLR") 
+		new Department("Sales", "BLR"),
 	};
-	Department dept = departments[0];
-	
-	Employee() {
-		this.ename = "";
-		this.eid = 0;
-		this.basic = 0;
-		this.da = 0.52 * basic;
-		this.gross = this.basic + this.da;
-	}
 	
 	Employee(int eid, String ename, double basic) {
 		this.ename = ename;
@@ -27,6 +16,7 @@ class Employee {
 		this.basic = basic;
 		this.da = 0.52 * basic;
 		this.gross = this.basic + this.da;
+		this.dept = departments[0];
 	}
 	
 	class Department {
@@ -38,7 +28,7 @@ class Employee {
 		}
 	}
 	
-	void addDepartments(int index, String department, String location) {
+	void addDepartments(String department, String location, int index) {
 		for (int i = 0; i < index; i++) {
 			this.departments[this.departments.length+i] = new Department(department, location);
 		}
@@ -59,17 +49,9 @@ class Employee {
 
 public class EmployeeDemo {
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		
-		String ename = "Vansh Rastogi";
-		int eid = 3012;
-		double basic = 790000;
-
-		Employee Vansh = new Employee(eid, ename, basic);
+		Employee Vansh = new Employee(3012, "Vansh Rastogi", 790000);
 		Vansh.compute_net_sal();
 		Vansh.display();
-		
-		s.close();
 	}
 
 }

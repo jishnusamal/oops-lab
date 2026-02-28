@@ -1,14 +1,9 @@
 package Lab_5;
-import java.util.Scanner;
 
 class Student {
 	String sname;
 	double total, avg;
 	Subject[] subjects = new Subject[10];
-	
-	Student() {
-		this.sname = "";
-	}
 	
 	Student(String sname) {
 		this.sname = sname;
@@ -28,7 +23,7 @@ class Student {
 	    }
 	}
 	
-	void addSubjects(String name, double marks, int index) {
+	void addSubject(String name, double marks, int index) {
 		Subject s = new Subject();
 		s.name = name;
 		s.assignMarks(marks);
@@ -60,21 +55,13 @@ class Student {
 public class StudentInnerClass {
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
 		String sname = "GK";
 		Student Gyanu = new Student(sname);
-		System.out.print("Enter no. of subjects: ");
-		int n = s.nextInt();
-		System.out.println("Enter marks of subjects");
-		for(int i = 0; i < n; i++) {
-			System.out.print("Enter marks in Subject "+ (i+1)+": ");
-			double marks = s.nextDouble();
-			Gyanu.addSubjects("Subject "+ (i+1), marks, i);
-		}
+		Gyanu.addSubject("OOPS", 85.0, 0);
+		Gyanu.addSubject("APE", 90.0, 1);
 			
 		Gyanu.compute();
 		Gyanu.display();
-		s.close();
 	}
 
 }

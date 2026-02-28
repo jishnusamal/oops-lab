@@ -2,7 +2,7 @@ package Lab_5;
 import java.util.Scanner;
 
 class ShoppingCart {
-	Item[] items;
+	Item[] items = new Item[100];
 	
 	class Item {
 		String itemName;
@@ -21,9 +21,19 @@ class ShoppingCart {
 			this.items[i] = items[i];
 		}
 	}
+
+	void calculateTotal() {
+		double total = 0;
+		for (Item item: this.items) {
+			if (item == null) break;
+			total += item.quantity * item.price;
+		}
+		System.out.println("Total: ₹" + total);
+	}
 	
 	void displayItems() {
 		for (Item item: this.items) {
+			if (item == null) break;
 			System.out.println(item.itemName + " " + item.quantity + " ₹" + item.price);
 		}
 	}
@@ -37,10 +47,22 @@ public class ShoppingCartDemo {
 		
 		System.out.print("Enter no. of items: ");
 		int n = s.nextInt();
-		for (int i = 0; i < n; i++) {
+		ShoppingCart.Item[] items = new ShoppingCart.Item[n];
 			
+		for (int i = 0; i < n; i++) {
+			s.nextLine();
+			System.out.print("Enter item name: ");
+			String itemName = s.nextLine();
+			System.out.print("Enter quantity: ");
+			int quantity = s.nextInt();
+			System.out.print("Enter price: ");
+			double price = s.nextDouble();
+			items[i] = cart.new Item(itemName, quantity, price);
 		}
-//		cart.addItems(n, );
+		cart.addItems(n, items);
+		cart.calculateTotal();
+		cart.displayItems();
+
 		s.close();
 	}
 

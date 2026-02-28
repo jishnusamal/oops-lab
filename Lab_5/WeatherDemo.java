@@ -37,10 +37,6 @@ class WeatherDemo {
     public static void main(String[] args) {
         Weather.Forecast.City delhi = new Weather.Forecast.City("Delhi", 35.0, 80.0);
         delhi.displayForecast();
-        Weather.Forecast.City mumbai = new Weather.Forecast.City("Mumbai", 32.0, 60.0);
-        mumbai.displayForecast();
-        Weather.Forecast.City kolkata = new Weather.Forecast.City("Kolkata", 28.0, 70.0);
-        kolkata.displayForecast();  
         Weather.Forecast.City Bengaluru = new Weather.Forecast.City("Bengaluru", 30.0, 50.0);
         Bengaluru.displayForecast();
     }
