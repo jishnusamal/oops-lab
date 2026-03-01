@@ -1,5 +1,4 @@
 package Lab_6;
-import java.util.Scanner;
 
 class Employee {
 	String ename = "", email = "";
@@ -7,39 +6,37 @@ class Employee {
 	double basic = 0, da = 0, gross = 0, net = 0;
 	Department[] departments = { 
 		new Department("Engineering", "BLR"), 
-		new Department("Sales", "BLR"), 
-		new Department("Marketing", "BLR"), 
-		new Department("HR", "BLR") 
+		new Department("Sales", "BLR"),
 	};
 	Department dept = departments[0];
 	
 	Employee(int eid, String ename, double basic) {
-		this.ename = this.formatEmployeeName(ename);
+		this.ename = this.formatEmployeeName();
 		this.eid = eid;
 		this.basic = basic;
 		this.da = 0.52 * basic;
 		this.gross = this.basic + this.da;
-		this.generateEmail();
+		this.email = this.generateEmail();
 	}
 	
 	class Department {
-		String departmentName, location;
+		String deptName, loc;
 		
-		Department(String departmentName, String location) {
-			this.departmentName = departmentName;
-			this.location = location;
+		Department(String deptName, String loc) {
+			this.deptName = deptName;
+			this.loc = loc;
 		}
 	}
 	
-	void addDepartments(int index, String department, String location) {
+	void addDepartments(int index, String dept, String loc) {
 		for (int i = 0; i < index; i++) {
-			this.departments[this.departments.length+i] = new Department(department, location);
+			this.departments[this.departments.length+i] = new Department(dept, loc);
 		}
 		
 	}
 	
-	String formatEmployeeName(String name) {
-		name = name.toLowerCase();
+	String formatEmployeeName() {
+		String name = this.ename.toLowerCase();
 		String formattedName = "";
 		String[] nameArray = name.split(" ");
 		for (String s: nameArray) {
@@ -48,9 +45,8 @@ class Employee {
 		return formattedName;
 	}
 	
-	void generateEmail() {
-		String email = this.ename.toLowerCase().trim().replace(" ", ".") + "@example.com";
-		this.email = email;
+	String generateEmail() {
+		return this.ename.toLowerCase().trim().replace(" ", ".") + "@example.com";
 	}
 	
 	void display() {
@@ -58,7 +54,7 @@ class Employee {
 		System.out.println("Name: "+this.ename);
 		System.out.println("Email: "+this.email);
 		System.out.println("Net Salary: "+this.net);
-		System.out.println("Department: " + this.dept.departmentName + ", "+ this.dept.location);
+		System.out.println("Department: " + this.dept.deptName + ", "+ this.dept.loc);
 	}
 	
 	void compute_net_sal() {
@@ -68,17 +64,9 @@ class Employee {
 
 public class EmployeeDemo {
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		
-		String ename = "VaNSh RAstOgI";
-		int eid = 3012;
-		double basic = 790000;
-
-		Employee Vansh = new Employee(eid, ename, basic);
+		Employee Vansh = new Employee(3012, "VaNSh RAstOgI", 790000);
 		Vansh.compute_net_sal();
 		Vansh.display();
-		
-		s.close();
 	}
 
 }

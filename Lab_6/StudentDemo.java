@@ -51,8 +51,7 @@ class Student {
 		System.out.println("Initials: "+this.initials);
 		System.out.println("Name without whitespace: "+ this.removeWhitespace());
 		System.out.println("Total Marks: "+this.total);
-		System.out.println("Average: "+this.avg);
-		System.out.println("\n");
+		System.out.println("Average: "+this.avg+"\n");
 	}
 
 	static void searchStudent(Student[] students, String subString) {
@@ -60,10 +59,10 @@ class Student {
 			String nameWithoutWhitespace = s.removeWhitespace().toLowerCase();
 
 			if (nameWithoutWhitespace.contains(subString.toLowerCase())) {
-				System.out.println("Matching student found: ");
-				System.out.println("Name: "+s.sname);
+				System.out.print("Matching student found: ");
+				System.out.println(s.sname);
 			}
-			System.out.println("\n");
+			System.out.println();
 		}
 	}
 
@@ -78,7 +77,7 @@ class Student {
 		for (String name: studentNames) {
 			System.out.println(name);
 		}
-		System.out.println("\n");
+		System.out.println();
 	}
 	
 	void compute() {
@@ -90,11 +89,8 @@ class Student {
 				count++; 
 			}
 		}
-		
-		double average = sum/count;
-
 		this.total = sum;
-		this.avg = average;
+		this.avg = sum/count;
 	}
 }
 
@@ -108,9 +104,7 @@ public class StudentDemo {
 		Gyanu.addSubjects("APE", 90.0, 1);
 
 		Student Vansh = new Student("Vansh Rastogi");
-		Vansh.addSubjects("OOPS", 90.0, 0);
-		Vansh.addSubjects("APE", 95.0, 1);
-
+		
 		Student[] students = {Vansh, Gyanu};
 		System.out.print("Enter substring to search: ");
 		String subString = s.nextLine();
@@ -120,8 +114,6 @@ public class StudentDemo {
 
 		Gyanu.compute();
 		Gyanu.display();
-		Vansh.compute();
-		Vansh.display();
 		s.close();
 	}
 
