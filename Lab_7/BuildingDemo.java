@@ -1,4 +1,4 @@
-package lab7;
+package Lab_7;
 
 class Building {
 	String name = "";

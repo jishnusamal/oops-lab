@@ -1,4 +1,4 @@
-package lab7;
+package Lab_7;
 import java.util.Arrays;
 
 class Student {
@@ -138,15 +138,13 @@ public class StudentDemo {
 	public static void main(String[] args) {
 		ScienceStudent Gyanu = new ScienceStudent("Gyanu Kumar", 92);
 		Gyanu.addSubjects("OOPS", 85.0, 0);
-		Gyanu.addSubjects("APE", 90.0, 1);
 		Gyanu.compute();
 		Gyanu.display();
 		Gyanu.displayPracticalMarks();
 		System.out.println();
 		
-		ArtStudent Tanay = new ArtStudent("Tanayanjan Parida", "Psychology");
+		ArtStudent Tanay = new ArtStudent("Tanay", "Psychology");
 		Tanay.addSubjects("History", 90.0, 0);
-		Tanay.addSubjects("Political Science", 95.0, 1);
 		Tanay.compute();
 		Tanay.display();
 	}
