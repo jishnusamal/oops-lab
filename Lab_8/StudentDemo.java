@@ -13,7 +13,7 @@ class Student {
     }
 
     public void putRollNum() {
-        System.out.println("Roll Number: " + rollNum);
+        System.out.println("Roll Num: " + rollNum);
     }
 
     public void getMarks(int marks) {
@@ -55,7 +55,7 @@ public class StudentDemo {
         student1.getMarks(85);
         student1.putSportsScore(15);
 
-        System.out.println("Student 1 Result:");
+        System.out.println("Student 1 Result");
         student1.displayResult();
     }
 }
