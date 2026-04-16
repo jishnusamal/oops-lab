@@ -4,6 +4,7 @@ import edu.manipal.mit.course.Course;
 
 public class Student {
 	private String name;
+	@SuppressWarnings("unused")
 	private int rollNum;
 	protected String dept;
 	public double gpa;

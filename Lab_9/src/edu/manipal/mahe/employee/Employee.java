@@ -1,8 +1,8 @@
 package edu.manipal.mahe.employee;
-
 import edu.manipal.mahe.department.Department;
 
 public class Employee {
+	@SuppressWarnings("unused")
 	private int eid;
 	private String name;
 	protected int age;
