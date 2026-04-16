@@ -1,4 +1,4 @@
-package Lab_10;
+package Lab_10.src.Lab_10;
 
 class StudentMarks {
 	double totalMarks;

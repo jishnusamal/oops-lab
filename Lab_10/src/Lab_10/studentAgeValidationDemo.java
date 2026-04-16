@@ -18,9 +18,9 @@ class Student {
 	    if ((age >= 18) && (age <=60)) {
 		    this.age = age;
 	    } else {
-	    	if (age<=18) {
+	    	if (age<18) {
 	    		throw new IllegalArgumentException(this.name + " is still minor. LOL.");
-	    	} else if (age >= 60) {
+	    	} else if (age > 60) {
 	    		throw new IllegalArgumentException(this.name + " is >60.");
 	    	}
 	    	

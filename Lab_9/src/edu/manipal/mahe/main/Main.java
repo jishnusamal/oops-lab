@@ -9,7 +9,7 @@ public class Main {
 	public static void main(String[] args) {
 		Department engg = new Department("Engineering", "Mogambo Poojary", "Bengaluru");
 		Employee Vansh = new Employee(2012, "Vansh", 19, 800000, engg);
-		Payroll payroll = new Payroll(Vansh, engg);
+		Payroll payroll = new Payroll(Vansh);
 		
 		payroll.calculateNetSalary();
 		

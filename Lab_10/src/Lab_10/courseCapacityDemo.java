@@ -1,4 +1,4 @@
-package Lab_10;
+package Lab_10.src.Lab_10;
 
 class CourseFullException extends Exception {
 	private static final long serialVersionUID = 1L;

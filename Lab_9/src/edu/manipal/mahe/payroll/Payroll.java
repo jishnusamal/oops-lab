@@ -1,14 +1,13 @@
 package edu.manipal.mahe.payroll;
-import edu.manipal.mahe.department.Department;
 import edu.manipal.mahe.employee.Employee;
 
 public class Payroll {
 	Employee e;
-	Department d;
+	// Department d;
 	
-	public Payroll(Employee e, Department d) {
+	public Payroll(Employee e) {
 		this.e = e;
-		this.d = d;
+		// this.d = d;
 	}
 	
 	public double calculateNetSalary() {
